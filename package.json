@@ -1,0 +1,118 @@
+{
+  "name": "express-starter-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest --config vitest.config.ts",
+    "test:integration": "vitest --config vitest.integration.config.ts",
+    "test:e2e": "vitest --config vitest.e2e.config.ts",
+    "test:all": "vitest --config vitest.config.ts && vitest --config vitest.integration.config.ts && vitest --config vitest.e2e.config.ts",
+    "test:coverage": "vitest --coverage --config vitest.config.ts",
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon --exec \"npx tsx\" --ext ts src/index.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:dev:migrate": "prisma migrate dev --name $npm_config_name"
+  },
+  "imports": {
+    "#Controllers/*": {
+      "development": "./src/controller/*.ts",
+      "production": "./src/controller/*.js"
+    },
+    "#Services/*": {
+      "development": "./src/services/*.ts",
+      "production": "./src/services/*.js"
+    },
+    "#Repositories/*": {
+      "development": "./src/repositories/*.ts",
+      "production": "./src/repositories/*.js"
+    },
+    "#Routes/*": {
+      "development": "./src/routes/*.ts",
+      "production": "./src/routes/*.js"
+    },
+    "#Middlewares/*": {
+      "development": "./src/middlewares/*.ts",
+      "production": "./src/middlewares/*.js"
+    },
+    "#Providers/*": {
+      "development": "./src/providers/*.ts",
+      "production": "./src/providers/*.js"
+    },
+    "#Schemas/*": {
+      "development": "./src/schemas/*.ts",
+      "production": "./src/schemas/*.js"
+    },
+    "#Errors/*": {
+      "development": "./src/errors/*.ts",
+      "production": "./src/errors/*.js"
+    },
+    "#Interfaces/*": {
+      "development": "./src/interfaces/*.ts",
+      "production": "./src/interfaces/*.js"
+    },
+    "#Utils/*": {
+      "development": "./src/utils/*.ts",
+      "production": "./src/utils/*.js"
+    },
+    "#Container": {
+      "development": "./src/container.ts",
+      "production": "./src/container.js"
+    },
+    "#Constants": {
+      "development": "./src/config/constants.ts",
+      "production": "./src/config/constants.js"
+    },
+    "#Env": {
+      "development": "./src/config/env/index.ts",
+      "production": "./src/config/env/index.js"
+    },
+    "#Managers": {
+      "development": "./src/config/managers/*.ts",
+      "production": "./src/config/managers/*.js"
+    },
+    "#Server": {
+      "development": "./src/server.ts",
+      "production": "./src/server.js"
+    },
+    "#Prisma": {
+      "development": "./src/generated/prisma/client.ts",
+      "production": "./src/generated/prisma/client.js"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^20.19.37",
+    "@types/pg": "^8.20.0",
+    "@types/pino": "^7.0.4",
+    "cross-env": "^10.1.0",
+    "nodemon": "^3.1.4",
+    "prisma": "^6.19.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.1.3"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.6.0",
+    "@prisma/client": "^6.19.2",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.20.0",
+    "pino": "^10.3.1",
+    "pino-pretty": "^13.1.3",
+    "zod": "^4.3.6"
+  }
+}
