@@ -1,0 +1,15 @@
+model User {
+  @@map("users")
+  @@schema("user")
+
+  id          String   @id @default(uuid())
+  email       String   @unique
+  avatarUrl   String?  @map("avatar_url")
+  firstName    String   @map("first_name")
+  lastName    String   @map("last_name")
+  middleName  String?  @map("middle_name")
+  birthDate   DateTime @map("birth_date")
+
+  createdAt   DateTime @map("created_at") @default(now())
+  updatedAt   DateTime @map("updated_at") @updatedAt
+}

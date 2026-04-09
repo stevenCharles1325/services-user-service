@@ -2,8 +2,8 @@ import Container from "#Container";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import createAuthRoutes from "#Routes/auth.route";
 import { errorMiddleware } from "#Middlewares/error.middleware";
+import createUserRoutes from "#Routes/user.route";
 
 export default async function createServer(container: Container) {
   const app = express();
@@ -13,7 +13,7 @@ export default async function createServer(container: Container) {
   app.use(cors());
   app.use(express.json());
 
-  app.use("/api/auth", createAuthRoutes(container.authController));
+  app.use("/api/users", createUserRoutes(container.userController));
 
   app.use(errorMiddleware);
 

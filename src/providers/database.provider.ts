@@ -1,16 +1,18 @@
+import {
+  createDatabaseManager,
+  ExtendedPrismaClient,
+} from "#Managers/database.manager";
 import { logger } from "#Managers/log.manager";
 import { PrismaClient } from "#Prisma";
 
 export default class DatabaseProvider {
-  private client!: PrismaClient;
+  private client!: ExtendedPrismaClient;
   private readonly logger = logger.child({ context: "DatabaseProvider" });
 
   constructor(private readonly databaseUrl: string) {}
 
   public async connect() {
-    const prisma = new PrismaClient({
-      datasources: { db: { url: this.databaseUrl } },
-    });
+    const prisma = createDatabaseManager(this.databaseUrl);
     this.client = prisma;
     this.client
       .$connect()
@@ -28,7 +30,7 @@ export default class DatabaseProvider {
     }
   }
 
-  public getClient(): PrismaClient {
+  public getClient(): ExtendedPrismaClient {
     if (!this.client) {
       throw new Error("Database client not initialized. Call connect() first.");
     }

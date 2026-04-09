@@ -5,7 +5,7 @@ import type TokenManager from "#Managers/token.manager";
 import type CredentialRepository from "#Repositories/credential.repository";
 import type OTPCodeRepository from "#Repositories/otp-code.repository";
 import type RefreshTokenRepository from "#Repositories/refresh-token.repository";
-import AuthService from "#Services/auth.service";
+import AuthService from "#Services/user.service";
 import { mockEnv } from "src/__tests__/mocks/managers/env.manager.mock";
 import { createMockHashManager } from "src/__tests__/mocks/managers/hash.manager.mock";
 import { createMockTokenManager } from "src/__tests__/mocks/managers/token.manager.mock";
