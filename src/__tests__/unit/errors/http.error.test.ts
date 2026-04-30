@@ -7,8 +7,8 @@ import {
   ConflictError,
   ValidationError,
   InternalServerError,
-} from "#Errors/http.error";
-import { AppError } from "#Errors/app.error";
+} from "src/core/errors/http.error";
+import { AppError } from "src/core/errors/app.error";
 
 describe("HTTP Errors", () => {
   describe("BadRequestError", () => {

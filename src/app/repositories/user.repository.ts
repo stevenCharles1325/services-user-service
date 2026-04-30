@@ -1,8 +1,8 @@
 import IUserRepository, {
   UserPaginationInput,
   UserPaginationResult,
-} from "#Interfaces/user.repository.interface";
-import { ExtendedPrismaClient } from "#Managers/database.manager";
+} from "#Core/interfaces/user.repository.interface";
+import { ExtendedPrismaClient } from "#Core/config/managers/database.manager";
 import { Prisma, User } from "#Prisma";
 import { CursorPaginationMeta } from "prisma-extension-pagination";
 

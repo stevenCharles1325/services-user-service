@@ -1,15 +1,15 @@
-import { logger } from "#Managers/log.manager";
+import { logger } from "#Core/config/managers/log.manager";
 import {
   CreateUserDTO,
   UpdateAvatarDTO,
   UpdateUserDTO,
-} from "#Schemas/user.schema";
+} from "#Core/schemas/user.schema";
 import { User } from "#Prisma";
-import type UserRepository from "#Repositories/user.repository";
+import type UserRepository from "#App/repositories/user.repository";
 import {
   UserPaginationInput,
   UserPaginationResult,
-} from "#Interfaces/user.repository.interface";
+} from "#Core/interfaces/user.repository.interface";
 
 export default class UserService {
   private readonly logger = logger.child({ context: "UserService" });

@@ -1,11 +1,11 @@
-import { AppConfig } from "#Env";
-import { ConflictError } from "#Errors/http.error";
+import { AppConfig } from "src/core/config/env";
+import { ConflictError } from "src/core/errors/http.error";
 import type HashManager from "#Managers/hash.manager";
 import type TokenManager from "#Managers/token.manager";
 import type CredentialRepository from "#Repositories/credential.repository";
 import type OTPCodeRepository from "#Repositories/otp-code.repository";
 import type RefreshTokenRepository from "#Repositories/refresh-token.repository";
-import AuthService from "#Services/user.service";
+import AuthService from "src/app/services/user.service";
 import { mockEnv } from "src/__tests__/mocks/managers/env.manager.mock";
 import { createMockHashManager } from "src/__tests__/mocks/managers/hash.manager.mock";
 import { createMockTokenManager } from "src/__tests__/mocks/managers/token.manager.mock";

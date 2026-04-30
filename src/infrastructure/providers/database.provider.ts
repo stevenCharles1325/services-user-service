@@ -1,9 +1,8 @@
 import {
   createDatabaseManager,
   ExtendedPrismaClient,
-} from "#Managers/database.manager";
-import { logger } from "#Managers/log.manager";
-import { PrismaClient } from "#Prisma";
+} from "#Core/config/managers/database.manager";
+import { logger } from "#Core/config/managers/log.manager";
 
 export default class DatabaseProvider {
   private client!: ExtendedPrismaClient;

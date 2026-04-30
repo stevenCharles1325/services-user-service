@@ -1,8 +1,8 @@
-import UserController from "#Controllers/user.controller";
-import DatabaseProvider from "#Providers/database.provider";
-import UserRepository from "#Repositories/user.repository";
-import UserService from "#Services/user.service";
-import { envManager } from "./config/env";
+import UserController from "src/app/controllers/user.controller";
+import DatabaseProvider from "#Infrastructure/providers/database.provider";
+import UserRepository from "#App/repositories/user.repository";
+import UserService from "#App/services/user.service";
+import { envManager } from "#Core/config/env/index";
 
 export default class Container {
   private static instance: Container;

@@ -1,12 +1,12 @@
-import UserController from "#Controllers/user.controller";
-import { validate } from "#Middlewares/validation.middleware";
+import UserController from "#App/controllers/user.controller";
+import { validate } from "#Middleware/validation.middleware";
 import {
   CreateUserSchema,
   DeleteManySchema,
   SearchUserSchema,
   UpdateAvatarSchema,
   UpdateUserSchema,
-} from "#Schemas/user.schema";
+} from "#Core/schemas/user.schema";
 import express from "express";
 
 export default function createUserRoutes(userController: UserController) {

@@ -1,5 +1,5 @@
-import { CreateUserDTO, SearchUserDTO } from "#Schemas/user.schema";
-import UserService from "#Services/user.service";
+import { CreateUserDTO, SearchUserDTO } from "#Core/schemas/user.schema";
+import UserService from "#App/services/user.service";
 import { Request, Response } from "express";
 
 export default class UserController {

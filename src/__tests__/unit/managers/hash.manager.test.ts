@@ -1,4 +1,3 @@
-import HashManager from "#Managers/hash.manager";
 import { describe, it, expect, beforeEach } from "vitest";
 
 describe("HashManager", () => {
